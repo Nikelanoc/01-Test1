@@ -1,19 +1,23 @@
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.Scanner;
 
 public class ileDniMinelo {
     public static void main(String[] args) {
-        LocalDate today = LocalDate.now();
-        System.out.println(today);
-        {
-            Scanner scanner = new Scanner(System.in);
-            Scanner dzien = int i;
-            int i = 23;
-            Scanner miesiac = int a;
-            int a = int luty;
-            Scanner rok = int b;
-            int b = 2020;
+    Scanner sc = new Scanner(System.in);
+    System.out.println( "What year?");
+    int year = sc.nextInt();
+    System.out.println("What month?");
+    int month = sc.nextInt();
+    System.out.println("What day?");
+    int day = sc.nextInt();
 
-        }
-    }
+    LocalDate now = LocalDate.now();
+    LocalDate entered = LocalDate.of(year, month, day);
+
+    System.out.println("Years: " + ChronoUnit.YEARS.between(entered, now));
+    System.out.println("Month:" + ChronoUnit.MONTHS.between(entered, now));
+    System.out.println("Day" + ChronoUnit.DAYS.between(entered, now));
 }
+}
+
